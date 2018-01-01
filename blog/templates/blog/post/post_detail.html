@@ -4,7 +4,7 @@
 
 {% block content %}
 	<h2>{{ post.title }}</h2>
-	<p>Written by: {{ post.author }} on {{post.published}}</p>
+	<p>Written by: {{ post.author }} -- {{post.published}}</p>
 	<hr>
 	{{post.content|linebreaks}}
 {% endblock %}

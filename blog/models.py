@@ -8,10 +8,10 @@ class Category(models.Model):
 	name = models.CharField(max_length=250)
 	slug = models.SlugField(max_length=250, unique=True)
 
-	class meta:
+	class Meta:
 		ordering = ('name',)
 		verbose_name = 'category'
-		verbose_plural_name = 'categories'
+		verbose_name_plural = 'categories'
 
 	def __str__(self):
 		return self.name
