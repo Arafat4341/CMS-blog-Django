@@ -7,4 +7,14 @@
 	<p>Written by: {{ post.author }} -- {{post.published}}</p>
 	<hr>
 	{{post.content|linebreaks}}
+	<hr>
+	<h1>Leave a comment</h1>
+	<p>Total no. of Comments: {{ post.comments.count }}</p>
+	{% for comment in post.comments.all %}
+		<p>{{ comment.created }}</p>
+		<p>{{ comment.user }}</p>
+		<p>{{ comment.body }}</p>
+		{% empty %}
+			<p>There is no comment</p>
+	{% endfor %}
 {% endblock %}
